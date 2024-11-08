@@ -29,6 +29,15 @@ public class DataRepository {
 		);
 	}
 
+	// 사용자 이름으로 User 조회 (Read)
+	public String findUserNameById(Long id) {
+		return jdbcTemplate.queryForObject(
+				"SELECT name FROM users WHERE id = ?",
+				new Object[] {id},
+				String.class
+		);
+	}
+
 	// 사용자 이름 변경 (Update)
 	public void updateUser(Long id, String newName) {
 		jdbcTemplate.update("UPDATE users SET name = ? WHERE id = ?", newName, id);

@@ -2,10 +2,14 @@ package com.thesun4sky.querymapper.querymapping;
 
 import com.thesun4sky.querymapper.dao.UserDao;
 import com.thesun4sky.querymapper.mapper.UserMapper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.thesun4sky.querymapper")
+@MapperScan(basePackages = "com.thesun4sky.querymapper.mapper")
 public class QueryMappingApplication {
     public static void main(String[] args) {
         // 어플리케이션 실행 컨텍스트 생성
